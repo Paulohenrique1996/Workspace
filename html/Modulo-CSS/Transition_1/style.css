@@ -1,0 +1,93 @@
+body{
+    font-family: sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    height: 400px;
+    width: 500px;
+    background-image: url('./maxresdefault.jpg') ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    filter:grayscale(0.6);
+    
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.9s;
+}
+
+.card-wrapper{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(0, 255, 13);
+    width: 329px;
+    height: 40px;
+
+}
+
+.card-wrapper::before {
+    content:'';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: block;
+    border: 1px solid rgb(255, 255, 255);
+    opacity: 0;
+    transition: 0.9s;  
+}
+
+.card-wrapper h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.9s;
+
+}
+
+.card-wrapper p{
+    font-size: 0px;
+    visibility: hidden;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: 0.9s;
+
+}
+
+.card:hover{
+    filter: none;
+    transition: 0,9s;
+}
+
+.card:hover > .card-wrapper::before{
+    opacity: 1;
+    height: 300px;
+    width: 400px;
+}
+
+.card:hover > .card-wrapper{
+    background-color: rgba(255, 255, 255, 0);
+    transition: 0.9s;
+}
+
+.card:hover > .card-wrapper p {
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
